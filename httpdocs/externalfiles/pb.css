@@ -1,0 +1,104 @@
+
+#pbox-overlay {
+	position: absolute;
+	background-color: #F6F6F6;
+	left: 0px;
+	top: 0px;
+	zoom: 1;
+}
+
+#pbox-window {
+	position: absolute;
+	background-color: #fff;
+	text-align: left;
+	overflow: visible;
+	padding: 10px;
+	border: 2px solid #808080;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-opera-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 0 6px #A1A1A1;
+	-moz-box-shadow: 0 0 6px #A1A1A1;
+	box-shadow: 0 0 6px #A1A1A1;
+}
+
+#pbox-btn-close {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: -14px;
+	top: -14px;
+	background: url(../images/closebox.png) no-repeat center;
+	border: none;
+}
+
+#pbox-loader {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: 0px;
+	top: 0px;
+	background: url(../images/spinner.gif) no-repeat center;
+	border: none;
+}
+
+.pbox-window-ie6 #pbox-btn-close {
+	background-image: url(../images/closebox.gif);
+}
+
+.pbox-loading #pbox-content {
+	background-image: url(../images/spinner.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#pbox-content {
+	clear: both;
+	overflow: auto;
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+}
+
+.pbox-content-image#pbox-content {
+	overflow: visible;
+}
+
+#pbox-image {
+	display: block;
+}
+
+.pbox-content-image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.pbox-content-iframe#pbox-content {
+	overflow: visible;
+}
+
+/* Hides scrollbars */
+.body-overlayed {
+	overflow: hidden;
+}
+.body-visible {
+	overflow-y: scroll;
+}
+
+/* Hides flash (Firefox problem) and selects (IE) */
+.body-overlayed embed, .body-overlayed object, .body-overlayed select {
+	visibility: hidden;
+}
+#pbox-window embed, #pbox-window object, #pbox-window select {
+	visibility: visible;
+}
+
+/* Shadows */
+.pbox-bg {
+	position: absolute;
+	width: 33px;
+	height: 40px;
+}

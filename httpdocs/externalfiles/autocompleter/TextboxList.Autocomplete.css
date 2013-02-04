@@ -1,0 +1,28 @@
+/* 
+		This stylesheet belongs to TextboxList - Copyright Guillermo Rauch <http://devthought.com> 2009 
+		TextboxList is not priceless for commercial use. See <http://devthought.com/projects/mootools/textboxlist/> 
+		Purchase to remove copyright
+*/
+
+.textboxlist-autocomplete { position: absolute; z-index: 100;}
+.textboxlist-autocomplete-placeholder, .textboxlist-autocomplete-results { opacity: 1; filter: alpha(opacity=100); background: #eee; -webkit-box-shadow: 0 3px 3px #ccc; -moz-box-shadow: 0 3px 3px #ccc; box-shadow: 0 3px 3px #ccc; border: 1px solid #A1A1A1; border-top: none; display: none; }
+.textboxlist-autocomplete-placeholder { padding: 5px 7px; }
+.textboxlist-autocomplete-results { margin: 0; padding: 0;}
+.textboxlist-autocomplete-result { margin: 0; padding: 5px; list-style-type: none; background: #eee; }
+.textboxlist-autocomplete-result-focus { background: #C6D9E4; }
+.textboxlist-autocomplete-highlight { color: #141414; font-weight: bold; }
+
+.form_tags, .form_tags_vertical { margin-bottom: 10px; }
+
+/* Preloader for autocomplete */
+/* .textboxlist-loading { background: url('../../images/spinner.gif') no-repeat 380px center; } */
+			
+/* Autocomplete results styling */
+#form_friends .textboxlist-autocomplete-result { overflow: hidden; zoom: 1; }
+#form_friends .textboxlist-autocomplete-result img { float: left; padding-right: 10px; }
+
+/*  TextboxList.Autocomplete Style guidelines 
+			Try to keep .textboxlist-autocomplete {} as it is now
+			If you apply custom styles to placeholder, also apply them to results, like it is now.
+			.textboxlist-autocomplete-result {} needs a background for IE.
+*/

@@ -1,0 +1,500 @@
+/* this is the main css for all the pages */
+
+/* main style */
+.body {
+	font: 16px Arial, Helvetica, sans-serif;
+	color: #000;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: 0;
+	top: 0px;
+	padding: 0px;
+	margin: 0px;
+	}
+
+.container {
+	top: 0px;
+	width: 100%;
+	padding-top: 3px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 3px;
+	margin: 0px;
+	}
+
+.contentarea {
+	width: 1000px;
+	padding: 0px;
+	margin: 0px;
+	padding-top: 24px;
+}
+
+img{
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+form {
+	font: 16px Arial, Helvetica, sans-serif;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+input {
+	font: 16px Arial, Helvetica, sans-serif;
+	padding: 0px;
+	margin: 0px;
+}
+
+textarea {
+	font: 16px Arial, Helvetica, sans-serif;
+	line-height: 20px;
+	padding: 0px;
+	margin: 0px;
+}
+
+iframe {
+	font: 16px Arial, Helvetica, sans-serif;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+div {
+	display: block;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+ul {
+	border: none;
+	padding: 0px;
+	margin-top: 6px;
+	margin-left: 12px;
+	margin-bottom: 6px;
+	margin-right: 6px;
+	list-style: disc inside;
+}
+
+ol {
+	border: none;
+	padding: 0px;
+	margin-top: 6px;
+	margin-left: 12px;
+	margin-bottom: 6px;
+	margin-right: 6px;
+	list-style: decimal inside;
+}
+
+li {
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+select {
+	padding: 0px;
+	margin: 0px;
+}
+
+option {
+	font: 16px Arial, Helvetica, sans-serif;
+	padding: 0px;
+	margin: 0px;
+}
+
+input[type="text"] {
+	color: #141414;
+	padding: 2px;
+	border: 1px solid #000;
+	outline: none;
+}
+
+input[type="text"].inputfocus {
+	color: #141414;
+	padding: 2px;
+	border: 1px solid #36F; 
+	outline: 2px solid #36F;
+}
+
+input[type="text"].inputplaceholderblur {
+	color: #141414;
+	padding: 2px;
+	border: 1px solid #000;
+	outline: none;
+}
+
+input[type="text"].inputplaceholder {
+	color: #808080;
+	padding: 2px;
+	border: 1px solid #000;
+	outline: none;
+}
+
+input[type="password"] {
+	color: #141414;
+	padding: 2px;
+	border: 1px solid #000;
+	outline: none;
+}
+
+input[type="password"].inputfocus {
+	color: #141414;
+	padding: 2px;
+	border: 1px solid #36F; 
+	outline: 2px solid #36F;
+}
+
+input[type="password"].inputplaceholderblur {
+	color: #141414;
+	padding: 2px;
+	border: 1px solid #000;
+	outline: none;
+}
+
+input[type="password"].inputplaceholder {
+	color: #808080;
+	padding: 2px;
+	border: 1px solid #000;
+	outline: none;
+}
+
+textarea {
+	color: #141414;
+	padding: 2px;
+	border: 1px solid #000;
+	outline: none;
+}
+
+textarea.inputfocus {
+	color: #141414;
+	padding: 2px;
+	border: 1px solid #36F; 
+	outline: 2px solid #36F;
+}
+
+textarea.inputplaceholderblur {
+	color: #141414;
+	padding: 2px;
+	border: 1px solid #000;
+	outline: none;
+}
+
+textarea.inputplaceholder {
+	color: #808080;
+	padding: 2px;
+	border: 1px solid #000;
+	outline: none;
+}
+
+input[type="button"] {
+	cursor: pointer;
+	height: 24px;
+	font-size: 16px;
+	padding-left: 18px;
+	padding-top: none;
+	padding-right: 18px;
+	padding-bottom: none;
+	background-color: #D9D9D9;
+	border: 1px solid #000;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-opera-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+}
+
+input[type="button"]:hover {
+	border: 1px solid #36F;
+	background-color: #C5C5C5;
+}
+
+input[type="button"].blur {
+	cursor: pointer;
+	height: 24px;
+	font-size: 16px;
+	color: #808080;
+	padding-left: 18px;
+	padding-top: none;
+	padding-right: 18px;
+	padding-bottom: none;
+	background-color: #D9D9D9;
+	border: 1px solid #000;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-opera-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+}
+
+input[type="button"].blur:hover {
+	border: 1px solid #36F;
+	background-color: #C5C5C5;
+}
+
+input[type="submit"] {
+	cursor: pointer;
+	height: 24px;
+	font-size: 16px;
+	padding-left: 18px;
+	padding-top: none;
+	padding-right: 18px;
+	padding-bottom: none;
+	background-color: #D9D9D9;
+	border: 1px solid #000;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-opera-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+	border: 1px solid #36F;
+	background-color: #C5C5C5;
+}
+
+input[type="submit"].blur {
+	cursor: pointer;
+	height: 24px;
+	font-size: 16px;
+	color: #808080;
+	padding-left: 18px;
+	padding-top: none;
+	padding-right: 18px;
+	padding-bottom: none;
+	background-color: #D9D9D9;
+	border: 1px solid #000;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-opera-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+}
+
+input[type="submit"].blur:hover {
+	border: 1px solid #36F;
+	background-color: #C5C5C5;
+}
+
+.loader {
+	background: url(../images/spinner.gif) no-repeat center;
+}
+
+.notvissec {
+	background-color: #FEF9E1;
+	border: 1px solid #FFF2B1;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-opera-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	border-radius: 6px;
+	padding: 6px;
+}
+
+/* text styles */
+
+a {
+    text-decoration: none;
+	color: #36F;
+	}
+	
+a:visited {
+    text-decoration: none;
+	}
+	
+a:hover {
+    color: #36F;
+    text-decoration: underline;
+	}
+
+.namelink {
+	color: #36F;
+	line-height: 20px;
+	cursor: pointer;
+	}
+	
+	.namelink a {
+	color: #36F;
+	line-height: 20px;
+	text-decoration: none;
+	}
+	
+	.namelink a:hover {
+	color: #36F;
+	line-height: 20px;
+	text-decoration: underline;
+	}
+	
+	.namelink a:visited {
+	color: #36F;
+	line-height: 20px;
+	text-decoration: none;
+	}
+	
+.p24 {
+	font-size: 24px;	
+}
+
+.p18 {
+	font-size: 18px;	
+}
+
+.subtext {
+	color: #808080;
+}
+
+.paragraph {
+	line-height: 24px;
+}
+
+.palert {
+	color: #F00;
+	line-height: 24px;
+}
+
+.topfltr {
+	cursor: pointer;	
+}
+
+.topfltrOn {
+	cursor: pointer;	
+}
+
+.topfltr .title {
+	font-size: 14px;
+	width: 90px; 
+	color: #808080;
+}
+
+.topfltr .bar {
+	width: 90px;
+	height: 8px;
+	background-color: #808080;
+	margin-bottom: 6px;
+}
+
+.topfltr .barclrfx {
+	width: 90px;
+	height: 8px;
+	background-color: #fff;
+	margin: 0px;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+}
+
+.topfltr .arrow {
+	display: none;
+}
+
+.topfltr:hover .title {
+	font-size: 14px;
+	width: 90px; 
+	color: #000;
+}
+
+.topfltrOn .title {
+	font-size: 14px;
+	width: 90px; 
+	color: #000;
+}
+
+.topfltrOn .bar {
+	width: 90px;
+	height: 8px;
+	background-color: #000;
+}
+
+.topfltrOn .barclrfx {
+	width: 90px;
+	height: 8px;
+	background-color: none;
+	margin: 0px;
+}
+
+.topfltrOn .arrow {
+	width: 12px;
+	height: 6px;
+	background-color: #000;
+}
+
+.peepblk {
+	padding: 4px;
+	border: 1px solid #808080;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-opera-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;	
+}
+
+.peepchsrblk {
+	padding: 4px;
+	border: 1px solid #808080;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-opera-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;	
+}
+
+.peepchsrblk:hover {
+	background-color: #DEE7F8;
+	padding: 4px;
+	border: 1px solid #808080;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-opera-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;	
+}
+
+.peepchsrblkOn {
+	background-color: #C1CEF8;
+	padding: 4px;
+	border: 1px solid #808080;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-opera-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;	
+}
+
+.peepchsrblkHide {
+	padding: 4px;
+	border: 1px solid #808080;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-opera-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+
+.blockbtn {
+	padding: 12px;
+	cursor: pointer;
+	border: 1px solid #FFF;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-opera-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	border-radius: 6px;
+}
+	
+.blockbtn:hover {
+	padding: 12px;
+	cursor: pointer;
+	background-color: #F6F6F6;
+	border: 1px solid #FFF;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-opera-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	border-radius: 6px;
+}
