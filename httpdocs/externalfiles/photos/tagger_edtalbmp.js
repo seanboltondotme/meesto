@@ -24,12 +24,12 @@ var tagger = {
 			newElem5.inject(newElem4, 'top');
 			var newElem6 = new Element('div', {'id': obj+'_taggersuggestions', 'align': 'left', 'styles': {'height': '100px', 'width': '228px', 'overflow-x': 'none', 'overflow-y': 'scroll'} });
 			newElem6.inject(newElem5, 'after');
-			var newElem7 = new Element('div', {'id': obj+'_loader', 'align': 'center', 'styles': {'margin-top': '4px', 'display': 'block'}, 'html': '<table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="http://www.meesto.com/images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table>'});
+			var newElem7 = new Element('div', {'id': obj+'_loader', 'align': 'center', 'styles': {'margin-top': '4px', 'display': 'block'}, 'html': '<table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="'+baseincpat+'images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table>'});
 			newElem7.inject(newElem6, 'after');
 		}
 		
 		new Request.JSON({  
-				url: "http://www.meesto.com/externalfiles/photos/tagger.php",
+				url: baseincpat+"externalfiles/photos/tagger.php",
 				onSuccess: function(response){
 					var sugobjs = $(document.body).getElements('div[id$=_taggersuggestions]');
 					for(i=0; i<sugobjs.length; i++) {
@@ -163,7 +163,7 @@ var tagger = {
 		$(this.obj+'_taggersuggestions').set('styles',{'display':'none'});
 		$(this.obj+'_loader').set('styles',{'display':'block'});
 		this.activetuid = 0;
-		gotopage(this.obj+'_taglist', 'http://www.meesto.com/externalfiles/photos/grabtags.php?apid='+this.obj.substr(2)+'&action=add&method=edtalbmp&uid='+uid+'&y='+$(this.obj+'_taggercont').getPosition(this.obj+'_tagcont').y+'&x='+$(this.obj+'_taggercont').getPosition(this.obj+'_tagcont').x);
+		gotopage(this.obj+'_taglist', ''+baseincpat+'externalfiles/photos/grabtags.php?apid='+this.obj.substr(2)+'&action=add&method=edtalbmp&uid='+uid+'&y='+$(this.obj+'_taggercont').getPosition(this.obj+'_tagcont').y+'&x='+$(this.obj+'_taggercont').getPosition(this.obj+'_tagcont').x);
 		var apid = this.obj.substr(2);
 		if ($(apid+'apt'+uid)) {
 			$(apid+'apt'+uid).getParent().destroy();

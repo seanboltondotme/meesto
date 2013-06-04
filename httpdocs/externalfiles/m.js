@@ -1,5 +1,8 @@
 // main javasccript functions
 
+// This may not be a best practice and may be a major security issue. For purposes of sharing the code, it allows the site to work on any server.
+var baseincpat = "http://www.meesto.com/";
+
 var backcontrol = {
 	initialize: function(url, hasclass, classname) {
 		this.state = '';
@@ -141,7 +144,7 @@ var backcontrol = {
 			height = 24;	
 		}
 		
-		$(target).set('html', '<div style="padding-top: 2px; height: '+height+'px;"><table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="http://www.meesto.com/images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table></div>');
+		$(target).set('html', '<div style="padding-top: 2px; height: '+height+'px;"><table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="'+baseincpat+'images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table></div>');
 		
 		var xhr = false;
 		
@@ -239,9 +242,9 @@ var headerSearch = {
 	
 	loadValues: function(){
 		new Request.JSON({  
-			url: "http://www.meesto.com/externalfiles/autocompleter/grabmypeeple-header.php", 
+			url: baseincpat+"externalfiles/autocompleter/grabmypeeple-header.php", 
 			onRequest: function() {
-				$('msrch').set('styles',{'background': '#fff url(\'http://www.meesto.com/images/spinner.gif\') no-repeat right center'});
+				$('msrch').set('styles',{'background': '#fff url(\''+baseincpat+'images/spinner.gif\') no-repeat right center'});
 			},
 			onSuccess: function(response){
 				headerSearch.setValues(response);
@@ -256,7 +259,7 @@ var headerSearch = {
 	
 	filter: function(search){
 		this.activepsid = 0;
-		$('msrch').set('styles',{'background': '#fff url(\'http://www.meesto.com/images/spinner.gif\') no-repeat right center'});
+		$('msrch').set('styles',{'background': '#fff url(\''+baseincpat+'images/spinner.gif\') no-repeat right center'});
 		if (!$('msrch_resultscont')) {
 			var newElem = new Element('div', {'id': 'msrch_resultscont', 'align': 'left', 'styles': {'background': '#fff', 'border': '2px solid #C5C5C5', 'padding': '4px', 'z-index': '100000'}});
 			newElem.inject($('msrch_inputcont'), 'after');
@@ -273,7 +276,7 @@ var headerSearch = {
 					var peepid = values[i][0];
 					if (values[i][1].test(regexp)) { //if matched
 						if (matched<10) {
-							var newHsPs = new Element('div', {'id': 'peephsps'+peepid, 'align': 'left', 'class': 'blockbtn-hs', 'html': values[i][2], 'onclick': 'window.location.href=\'http://www.meesto.com/meefile.php?id='+peepid+'\''});
+							var newHsPs = new Element('div', {'id': 'peephsps'+peepid, 'align': 'left', 'class': 'blockbtn-hs', 'html': values[i][2], 'onclick': 'window.location.href=\''+baseincpat+'meefile.php?id='+peepid+'\''});
 							newHsPs.inject($('msrch_resultscont'), 'bottom');
 						}
 						matched++;
@@ -282,11 +285,11 @@ var headerSearch = {
 			}
 			if (matched==0) {
 				if (!$('hsps_srchstatelm')) {
-					var goToSearchPg = new Element('div', {'id': 'peephspsSrch', 'align': 'left', 'class': 'blockbtn-hs', 'html': 'No matches were found,<br/>search all of Meesto.', 'onclick': 'window.location.href=\'http://www.meesto.com/search.php?q='+encodeURIComponent($('msrch').value)+'\''});
+					var goToSearchPg = new Element('div', {'id': 'peephspsSrch', 'align': 'left', 'class': 'blockbtn-hs', 'html': 'No matches were found,<br/>search all of Meesto.', 'onclick': 'window.location.href=\''+baseincpat+'search.php?q='+encodeURIComponent($('msrch').value)+'\''});
 					goToSearchPg.inject($('msrch_resultscont'), 'bottom');
 				}
 			} else {
-				var goToSearchPg = new Element('div', {'id': 'peephspsSrch', 'align': 'left', 'class': 'blockbtn-hs', 'html': 'search all of Meesto...', 'onclick': 'window.location.href=\'http://www.meesto.com/search.php?q='+encodeURIComponent($('msrch').value)+'\''});
+				var goToSearchPg = new Element('div', {'id': 'peephspsSrch', 'align': 'left', 'class': 'blockbtn-hs', 'html': 'search all of Meesto...', 'onclick': 'window.location.href=\''+baseincpat+'search.php?q='+encodeURIComponent($('msrch').value)+'\''});
 				goToSearchPg.inject($('msrch_resultscont'), 'bottom');
 			}
 			$('msrch_resultscont').getFirst().addClass('blockbtn-hsOn');
@@ -324,10 +327,10 @@ var headerSearch = {
 	
 	makeChoice: function(){
 		if ($('peephsps'+this.activepsid).get('id').substr(8)=='Srch') {
-			window.location.href='http://www.meesto.com/search.php?q='+encodeURIComponent($('msrch').value);
+			window.location.href=''+baseincpat+'search.php?q='+encodeURIComponent($('msrch').value);
 		} else {
 			if (this.activepsid!=0) {
-				window.location.href='http://www.meesto.com/meefile.php?id='+$('peephsps'+this.activepsid).get('id').substr(8);
+				window.location.href=''+baseincpat+'meefile.php?id='+$('peephsps'+this.activepsid).get('id').substr(8);
 			}
 		}
 	}

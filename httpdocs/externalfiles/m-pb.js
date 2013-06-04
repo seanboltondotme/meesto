@@ -59,7 +59,7 @@ function resize_pb() {
 			height = 24;	
 		}
 		
-		$(target).set('html', '<div style="padding-top: 2px; height: '+height+'px;"><table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="http://www.meesto.com/images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table></div>');
+		$(target).set('html', '<div style="padding-top: 2px; height: '+height+'px;"><table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="'+baseincpat+'images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table></div>');
 		
 		var xhr = false;
 		

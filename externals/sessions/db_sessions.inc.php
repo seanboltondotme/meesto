@@ -19,7 +19,7 @@ function open_session() {
 	global $dbc;
 	
 	// Connect to the database.
-	DEFINE('DB_USER', '');
+	DEFINE('DB_USER', 'root');
 	DEFINE ('DB_PASSWORD', '');
 	DEFINE ('DB_HOST', 'localhost');
 	DEFINE ('DB_NAME', 'meesto');

@@ -99,10 +99,10 @@ var PeepSearch = {
 		} else {
 			var matched = 0;
 			if (!$('srchstat')) {
-				var newElem = new Element('div', {'id': 'srchstat', 'align': 'left', 'html': '<div style="margin: 12px;"><table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="http://www.meesto.com/images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table></div>'});
+				var newElem = new Element('div', {'id': 'srchstat', 'align': 'left', 'html': '<div style="margin: 12px;"><table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="'+baseincpat+'images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table></div>'});
 				newElem.inject($('peeparea'), 'top');
 			} else {
-				$('srchstat').set('html', '<div style="margin: 12px;"><table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="http://www.meesto.com/images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table></div>');
+				$('srchstat').set('html', '<div style="margin: 12px;"><table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="'+baseincpat+'images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table></div>');
 			}
 			var values = this.values, regexp = new RegExp('\\b' + search.escapeRegExp(), true ? 'i' : '');
 			for (var i = 0; i < values.length; i++){

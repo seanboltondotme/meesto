@@ -14,9 +14,13 @@ if (isset($_POST['save'])) {
 	
 	$errors = NULL;
 	
+	/* recaptcha not active
+	
 	$resp = recaptcha_check_answer ($privatekey, $_SERVER["REMOTE_ADDR"], $_POST["recaptcha_challenge_field"], $_POST["recaptcha_response_field"]);
 
 	if ($resp->is_valid) {
+		
+	*/
 	
 		if (isset($_POST['fn']) && ($_POST['fn'] != 'first name')) {
 			$fn = ucwords(strtolower(escape_data($_POST['fn'])));
@@ -78,10 +82,15 @@ if (isset($_POST['save'])) {
 		} else {
 			$errors[] = 'You must enter a password.';
 		}
+		
+	/* recaptcha not active
+	
 	} else {
 		$iscaptchaerror = true;
 		$errors[] = 'Incorrect recaptcha please try again.';
 	}
+	
+	*/
 	
 	if (empty($errors)) {
 		//create user
@@ -378,9 +387,11 @@ echo '<form action="'.$baseincpat.'signup.php" method="post">
 		<input type="password" id="pw" name="pw" size="24" maxlength="30" autocomplete="off" onfocus="this.className=\'inputfocus\';" onblur="this.className=\'inputplaceholderblur\';" onkeyup="" value="">
 	</td></tr></table>
 </td></tr><tr><td align="left" style="padding-top: 12px; padding-bottom: 24px;">
-	<table cellpadding="0" cellspacing="0"><tr><td align="left" valign="top" width="110px">verification:</td><td align="left" class="paragraph60" style="padding-left: 2px;">
+	<table cellpadding="0" cellspacing="0"><tr><td align="left" valign="top" width="110px">verification:</td><td align="left" class="paragraph60" style="padding-left: 2px;">';
+	
+	/* recaptcha not active – needs valid access key
 				
-				<script>
+				echo '<script>
 				var RecaptchaOptions = {
 				   theme: \'custom\',
 				   lang: \'en\',
@@ -419,9 +430,13 @@ echo '<form action="'.$baseincpat.'signup.php" method="post">
 				
 				</td></tr></table>
 				
-				<script type="text/javascript" src="http://api.recaptcha.net/challenge?k='.$publickey.'"></script>
+				<script type="text/javascript" src="http://api.recaptcha.net/challenge?k='.$publickey.'"></script>';
 				
-	</td></tr></table>
+			*/
+			echo 'recaptcha is turned off';
+			
+				
+	echo '</td></tr></table>
 </td></tr></table>
 <div align="center" style="padding-top: 12px; border-top: 1px solid #E4E4E4;">
 		<div align="center" id="sbmtbtns">

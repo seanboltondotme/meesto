@@ -82,7 +82,7 @@ function uploadSuccess(file, serverData) {
 			progress.toggleCancel(false);
 			
 		if (serverData.substring(0, 5)!='error') {
-			parent.$(serverData.substr(0, serverData.indexOf("&"))).contentWindow.attachments.upload('http://www.meesto.com/'+serverData.substr(serverData.indexOf("&")+1, (serverData.lastIndexOf("&")-(serverData.indexOf("&")+1))), serverData.substr(serverData.lastIndexOf("&")+1));
+			parent.$(serverData.substr(0, serverData.indexOf("&"))).contentWindow.attachments.upload(''+baseincpat+''+serverData.substr(serverData.indexOf("&")+1, (serverData.lastIndexOf("&")-(serverData.indexOf("&")+1))), serverData.substr(serverData.lastIndexOf("&")+1));
 		}
 
 	} catch (ex) {

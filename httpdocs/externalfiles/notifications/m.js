@@ -6,7 +6,7 @@ var notifs = {
 		  if (oStatus.success) {
 			mySound_Notif = soundManager.createSound({
 			  id: 'mySound_Notif',
-			  url: 'http://www.meesto.com/externalfiles/notifications/notifs-new.mp3',
+			  url: baseincpat+'externalfiles/notifications/notifs-new.mp3',
 			  volume: 80
 			});
 		  } else {
@@ -35,7 +35,7 @@ var notifs = {
 		}
 		
 		new Request.JSON({  
-			url: "http://www.meesto.com/externalfiles/notifications/observe.php", 
+			url: baseincpat+"externalfiles/notifications/observe.php", 
 			onRequest: function() {
 				this.openONR = true;
 			},  
@@ -58,13 +58,13 @@ var notifs = {
 		}).send();
 	},
 	loadlist: function() {
-		loadcont('po_maincont', 'http://www.meesto.com/externalfiles/notifications/grab.php');
+		loadcont('po_maincont', ''+baseincpat+'externalfiles/notifications/grab.php');
 	},
 	setRead: function() {
 		if ($('ponotifcont').getFirst()) {
-			goto('http://www.meesto.com/externalfiles/notifications/setread.php?snid='+$('ponotifcont').getFirst().get('id').substr(5));
+			goto(''+baseincpat+'externalfiles/notifications/setread.php?snid='+$('ponotifcont').getFirst().get('id').substr(5));
 		} else {
-			goto('http://www.meesto.com/externalfiles/notifications/setread.php?');
+			goto(''+baseincpat+'externalfiles/notifications/setread.php?');
 		}
 		this.observeNotifs();
 	}

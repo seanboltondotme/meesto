@@ -6,12 +6,12 @@ var meechat = {
 		  if (oStatus.success) {
 			mySound_MCR = soundManager.createSound({
 			  id: 'mySound_MCR',
-			  url: 'http://www.meesto.com/externalfiles/meechat/MeeChat-Receive.mp3',
+			  url: baseincpat+'externalfiles/meechat/MeeChat-Receive.mp3',
 			  volume: 80
 			});
 			mySound_MCS = soundManager.createSound({
 			  id: 'mySound_MCS',
-			  url: 'http://www.meesto.com/externalfiles/meechat/MeeChat-Send.mp3',
+			  url: baseincpat+'externalfiles/meechat/MeeChat-Send.mp3',
 			  volume: 30
 			});
 		  } else {
@@ -57,7 +57,7 @@ var meechat = {
 	},
 	observeList: function() {
 		new Request.JSON({  
-			url: "http://www.meesto.com/externalfiles/meechat/observelist.php",  
+			url: baseincpat+"externalfiles/meechat/observelist.php",  
 			onSuccess: function(response){ 
 				var oldonlnct = $('mc_onlinect').get('html');
 				$('mc_onlinect').set('html', response);
@@ -68,7 +68,7 @@ var meechat = {
 		}).send();
 	},
 	loadlist: function() {
-		loadcont('chat_main', 'http://www.meesto.com/externalfiles/meechat/grablist.php');
+		loadcont('chat_main', ''+baseincpat+'externalfiles/meechat/grablist.php');
 	},
 	openChat: function(cid) {
 		if (opencid!=0) {
@@ -78,7 +78,7 @@ var meechat = {
 		opencid = cid;
 		$('chat_convocont'+cid).set('tween', {duration: 'short'}).fade('show');
 		$('chat_badge'+cid).set('tween', {duration: 'short'}).fade('hide');
-		goto('http://www.meesto.com/externalfiles/meechat/showchat.php?cid='+cid);
+		goto(''+baseincpat+'externalfiles/meechat/showchat.php?cid='+cid);
 		$('chat_thread'+cid).scrollTo(0, $('chat_thread'+cid).getScrollSize().y);
 		meechat.loadNewMsgs(cid);
 		$('chat_chatter'+opencid).addEvent('keydown', this.enterSubmit);
@@ -86,13 +86,13 @@ var meechat = {
 	},
 	hideChat: function(cid) {
 		opencid = 0;
-		goto('http://www.meesto.com/externalfiles/meechat/hidechat.php?cid='+cid);
+		goto(''+baseincpat+'externalfiles/meechat/hidechat.php?cid='+cid);
 		$('chat_convocont'+cid).set('tween', {duration: 'short'}).fade('hide');
 		$('chat_chatter'+opencid).removeEvent('keydown', this.enterSubmit);
 	},
 	closeChat: function(cid) {
 		opencid = 0;
-		goto('http://www.meesto.com/externalfiles/meechat/closechat.php?cid='+cid);
+		goto(''+baseincpat+'externalfiles/meechat/closechat.php?cid='+cid);
 		$('chat_chatter'+cid).removeEvent('keydown', this.enterSubmit);
 		$('chat_pers'+cid).destroy();
 	},
@@ -103,7 +103,7 @@ var meechat = {
 		}
 		
 		new Request.JSON({  
-			url: "http://www.meesto.com/externalfiles/meechat/observechats.php", 
+			url: baseincpat+"externalfiles/meechat/observechats.php", 
 			onRequest: function() {
 				this.openOCR = true;
 			},
@@ -121,7 +121,7 @@ var meechat = {
 		if ($('chat_pers'+cid)) {
 			//alert('hi'+cid);
 			new Request.JSON({  
-				url: "http://www.meesto.com/externalfiles/meechat/observechat.php", 
+				url: baseincpat+"externalfiles/meechat/observechat.php", 
 				onRequest: function() {
 					//alert('onRequest'+cid);
 				},
@@ -186,7 +186,7 @@ var meechat = {
 					$('chat_thread'+cid).scrollTo(0, $('chat_thread'+cid).getScrollSize().y);
 				}
 			}
-			xhr.open("GET", 'http://www.meesto.com/externalfiles/meechat/grabmsgs.php?cid='+cid, true);
+			xhr.open("GET", ''+baseincpat+'externalfiles/meechat/grabmsgs.php?cid='+cid, true);
 			xhr.send(null);
 		}
 		else {
@@ -232,7 +232,7 @@ var meechat = {
 					meechat.openChat(cid);
 					}
 				}
-			xhr.open("GET", 'http://www.meesto.com/externalfiles/meechat/newchat.php?cid='+cid+'&a='+a, true);
+			xhr.open("GET", ''+baseincpat+'externalfiles/meechat/newchat.php?cid='+cid+'&a='+a, true);
 			xhr.send();
 		} else {
 			alert("An error occured – sorry about that. Let us know if this continues.");
@@ -277,7 +277,7 @@ var meechat = {
 					meechat.observeChat(cid);
 					}
 				}
-			xhr.open("GET", 'http://www.meesto.com/externalfiles/meechat/newchat.php?cid='+cid+'&ns=true', true);
+			xhr.open("GET", ''+baseincpat+'externalfiles/meechat/newchat.php?cid='+cid+'&ns=true', true);
 			xhr.send();
 		} else {
 			alert("An error occured – sorry about that. Let us know if this continues.");
@@ -311,7 +311,7 @@ var meechat = {
 					$('chat_thread'+cid).scrollTo(0, $('chat_thread'+cid).getScrollSize().y);
 				}
 			}
-			xhr.open("GET", 'http://www.meesto.com/externalfiles/meechat/newmsg.php?cid='+cid+'&msg='+msg, true);
+			xhr.open("GET", ''+baseincpat+'externalfiles/meechat/newmsg.php?cid='+cid+'&msg='+msg, true);
 			xhr.send(null);
 		}
 		else {
@@ -323,7 +323,7 @@ var meechat = {
 		$('chat_thread'+cid).scrollTo(0, $('chat_thread'+cid).getScrollSize().y);
 	},
 	injectLoader: function(target) {
-		$(target).set('html', '<div style="padding-top: 2px;"><table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="http://www.meesto.com/images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table></div>');
+		$(target).set('html', '<div style="padding-top: 2px;"><table cellpadding="0" cellspacing="0"><tr><td align="left" valign"center"><img src="'+baseincpat+'images/spinner.gif" /></td><td align="left" valign"center" style="padding-left: 2px;">loading...</td></tr></table></div>');
 	},
 	toggleSound: function(sndtgl) {
 		if (sndtgl=='on') {
@@ -335,7 +335,7 @@ var meechat = {
 			$('mc_sndOff').set('styles',{'font-size': '16px', 'color': '#000'});
 			$('mc_sndOn').set('styles',{'font-size': '13px', 'color': '#808080'});
 		}
-		goto('http://www.meesto.com/externalfiles/meechat/togglesound.php?t='+sndtgl);	
+		goto(''+baseincpat+'externalfiles/meechat/togglesound.php?t='+sndtgl);	
 	},
 	toggleStat_OffChk: function() {
 		var sctns = $('chat_main').getChildren();
