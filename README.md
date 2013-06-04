@@ -25,7 +25,9 @@ Installation
 -------
 
 ### Database
-See databases.txt for all of the data base creation scripts. There should be 68 tables.
+See databases.txt for all of the database creation scripts. There should be 68 tables.
+
+Edit externals/sessions/db_sessions.inc.php with your database access information.
 
 ### URL Paths
 Edit these files to contain the correct path to your server. The URL should route to the base public directory.
